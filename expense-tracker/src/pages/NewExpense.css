@@ -1,0 +1,224 @@
+/* Overall Layout */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.container {
+  display: flex;
+  min-height: 100vh; /* Ensures the entire viewport height is covered */
+  background-color: #fdf8ef;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #c98c46;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures sidebar-bottom stays at the bottom */
+  padding: 20px;
+  height: 100vh;
+}
+
+/* Branding */
+.brand {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+  background: white;
+  color: #c98c46;
+}
+
+/* Sidebar Bottom (Settings & Logout Buttons) */
+.sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+.sidebar-bottom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e6a15a;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  gap: 8px;
+}
+
+.sidebar-bottom a:hover {
+  background: #d48846;
+  transform: scale(1.05);
+}
+
+.sidebar-bottom a.logout-btn {
+  background: #ff4d4d;
+}
+
+.sidebar-bottom a.logout-btn:hover {
+  background: #cc0000;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100vh; /* Ensures content area expands fully */
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Form Styling */
+.expense-form {
+  background: white;
+  padding: 30px 50px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+}
+
+/* Two-column Grid with Increased Spacing */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+/* Make full-width for attachments */
+.full-width {
+  grid-column: span 2;
+}
+
+/* Input Fields */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+
+textarea {
+  height: 60px;
+  resize: none;
+}
+
+/* Upload Box */
+.upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  color: #666;
+  position: relative;
+}
+
+.hidden {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background-color: #e6a15a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.submit-btn:hover {
+  background-color: #d48846;
+}
+
+/* Footer - Sticks to the bottom without overlapping */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  margin-top: auto; /* Ensures the footer is pushed to the bottom */
+}
+
+/* Ensure the content-wrapper takes full height */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
