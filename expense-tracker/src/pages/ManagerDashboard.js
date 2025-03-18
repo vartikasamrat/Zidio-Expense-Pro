@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { Home, FileText, Clipboard, BarChart, LogOut } from "react-feather";
 import "./ExpensePro.css";
