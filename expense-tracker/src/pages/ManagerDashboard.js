@@ -1,6 +1,5 @@
 
 
-
 import { useState } from "react";
 import { Home, FileText, Clipboard, BarChart, LogOut } from "react-feather";
 import "./ExpensePro.css";
@@ -21,7 +20,7 @@ const getStatusIcon = (status) => {
 const DashboardManager = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
   const [pendingApprovals, setPendingApprovals] = useState([
-    { id: 1, name: "Team lunch reimbursement", amount: 1200, status: "pending", submittedBy: "John", daysAgo: 2 },
+    { id: 1, name: "Team lunch    ", amount: 1200, status: "pending", submittedBy: "John", daysAgo: 2 },
     { id: 2, name: "Office supplies", amount: 300, status: "pending", submittedBy: "James", daysAgo: 1 },
   ]);
 
@@ -95,8 +94,9 @@ const DashboardManager = () => {
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: "30px" }}>
+        
           {/* Recent Expenses Section */}
+          
           <div className="recent-expenses" style={{ flex: 1 }}>
             <div className="expenses-header">
               <h2 className="expenses-title">Recent Expenses</h2>
@@ -111,13 +111,14 @@ const DashboardManager = () => {
                 </div>
               ))}
             </div>
-          </div>
+          
 
           {/* Approvals Section */}
           <div className="recent-expenses" style={{ flex: 1 }}>
             <div className="expenses-header">
               <h2 className="expenses-title">Your Approvals</h2>
             </div>
+
             {pendingApprovals.length > 0 ? (
               <div className="expenses-list">
                 {pendingApprovals.map((approval) => (
@@ -143,3 +144,4 @@ const DashboardManager = () => {
 };
 
 export default DashboardManager;
+
