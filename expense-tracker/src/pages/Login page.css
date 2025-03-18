@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+
 body {
   margin: 0;
-  font-family: 'Georgia', serif;
+  font-family: "Merriweather", serif;
 }
 
 .container {
@@ -21,6 +25,7 @@ body {
 }
 
 .title {
+  font-family: 'Dancing Script', cursive;
   font-size: 3.5rem;
   margin-top: 2px;
 }
