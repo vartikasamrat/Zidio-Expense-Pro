@@ -16,7 +16,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 250px;
+  width: 175px;
   background: #c98c46;
   color: white;
   display: flex;
@@ -55,7 +55,7 @@ nav a {
   align-items: center;
   gap: 10px;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 nav a:hover,
@@ -106,7 +106,7 @@ nav a.active {
 }
 
 .page-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
 }
@@ -152,7 +152,7 @@ nav a.active {
 .form-group label {
   font-weight: bold;
   margin-bottom: 5px;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 /* Input Styling */
@@ -244,4 +244,3 @@ select:focus {
 .submit-btn:hover {
   background-color: #d48846;
 }
-
