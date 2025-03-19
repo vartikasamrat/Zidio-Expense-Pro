@@ -423,13 +423,17 @@ select:focus {
   justify-content: center;
   align-items: center;
   font-size: 14px; 
-  background-color: rgb(19, 232, 47);
+  
   margin-bottom: 5px;
   margin-top: 5px;
+  background-color: rgb(67, 209,16);
+  border-radius: 6px;
+  border: none;
+  color: white;
 }
 
 .reject-btn {
-  background: #f31111;
+  background-color: rgb(215, 17,71) ;
 }
 
 
