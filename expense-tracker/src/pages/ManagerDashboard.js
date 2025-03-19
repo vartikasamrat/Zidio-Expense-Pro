@@ -55,7 +55,7 @@ const DashboardManager = () => {
               <FileText size={18} /> Expenses
             </a>
             <a onClick={() => setActiveTab("add-expense")} className={activeTab === "add-expense" ? "active" : ""}>
-              <Clipboard size={18} /> Add Expense
+              <Clipboard size={18} /> Approval
             </a>
             <a onClick={() => setActiveTab("reports")} className={activeTab === "reports" ? "active" : ""}>
               <FileText size={18} /> Reports
