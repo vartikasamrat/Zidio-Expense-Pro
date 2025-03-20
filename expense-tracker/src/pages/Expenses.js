@@ -1,24 +1,26 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
-import ExpenseTable from "../components/ExpenseTable";
+import Sidebar from "../components/Sidebar";
 import "../styles/Expenses.css";
+import ExpensesTable from "../components/ExpensesTable";
+
+
+
 
 const Expenses = () => {
   return (
-    <div className="container">   
-      <Sidebar />
-      <div className="main-content">
-        <Header /> 
+    <div className="container">
+      <Sidebar/>
+      <div className="main-container>">
+        <Header/>
         <div>
           <h2 className="expenses-heading">Expenses</h2>
           <p className="expenses-para">Track and manage your expenses</p>
-        <ExpenseTable />
-        </div>
+          <ExpensesTable/>
         </div>
       </div>
-   
+    </div>
+
   );
 };
-
 export default Expenses;
