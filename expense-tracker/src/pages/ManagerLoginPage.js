@@ -1,4 +1,4 @@
-import "./Login page.css";
+import "./Loginpage.css";
 import cashbag from './assets/cashbag.png';
 import analytics from './assets/analytics.png';
 import target from './assets/target.png';
@@ -45,7 +45,7 @@ function App() {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" className="form-input" placeholder="It should be minimum of 8 characters" />
           </div>
-          <button type="submit" className="login-btn">Enter</button>
+          <button type="submit" className="enter-btn">Enter</button>
           <p>Forgot Password?</p>
         </form>
       </div>
