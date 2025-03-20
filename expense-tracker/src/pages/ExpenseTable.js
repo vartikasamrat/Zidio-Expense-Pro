@@ -1,51 +1,10 @@
-/* import React from "react";
-import "../styles/ExpenseTable.css";
-
-const ExpenseTable = () => {
-  return (
-    <div className="expense-table">
-      <input type="text" placeholder="Search" className="search-bar" />
-      <div className="filters">
-        <button className="all-btn">All</button>
-        <button className="approved-btn">Approved</button>
-        <button className="pending-btn">Pending</button>
-        <button className="rejected-btn">Rejected</button>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Description</th>
-            <th>Amount</th>
-            <th>Category</th>
-            <th>Date</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Team lunch</td>
-            <td>₹1200</td>
-            <td>Food</td>
-            <td>04-06-2003</td>
-            <div className="right">
-            <td>✅</td>
-            </div>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-};
-
-export default ExpenseTable;
- */
 
 import React from "react";
-import "../styles/ExpenseTable.css";
+import "../styles/ExpensesTable.css";
 import { FaSearch } from "react-icons/fa";
 
 
-const ExpenseTable = () => {
+const ExpensesTable = () => {
   return (
     <div className="expense-container">
       {/* Search Input */}
@@ -93,7 +52,14 @@ const ExpenseTable = () => {
               <td>✅</td>
             </tr>
             <tr>
+              <td><br></br></td>
               <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><br></br><br></br></td>
               <td></td>
               <td></td>
               <td></td>
@@ -109,4 +75,4 @@ const ExpenseTable = () => {
   );
 };
 
-export default ExpenseTable;
+export default ExpensesTable;
