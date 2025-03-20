@@ -13,7 +13,7 @@ body {
 .sidebar {  
   width: 220px;
   height: 100vh;
-  background: #c98c46;
+  background: #f0a44e;
   color: white;
   display: flex;
   flex-direction: column;
@@ -58,6 +58,7 @@ body {
 }
 .menu li span{
   margin-left: 10px;
+  
   
 
 }
