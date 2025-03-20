@@ -1,26 +1,36 @@
 import React from "react";
-import { FaHome, FaFileInvoiceDollar,  FaClipboardCheck, FaChartBar,  FaSignOutAlt } from "react-icons/fa";
-import "../styles/Sidebar.css";
 import { NavLink } from "react-router-dom";
-
+import { Home, FileText, BarChart, ClipboardList, LogOut } from "lucide-react";
+import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
-      <h2 className="expense-pro">Expense Pro</h2>
-      <nav className="menu">
-        <li><onclick to="/" activeClassName="active"><FaHome/><span>Dashboard</span></onclick ></li>
-        <li><onclick to="/expenses" activeClassName="active"><FaFileInvoiceDollar/> <span>Expenses</span> </onclick ></li>
-        <li><onclick to="/approvals" activeClassName="active"><FaClipboardCheck /><span> Approval</span></onclick ></li>
-        <li><onclick to="/reports" activeClassName="active"><FaChartBar /><span>Reports</span> </onclick ></li>
-        <li><onclick to="/analytics" activeClassName="active"><FaChartBar /><span> Analytics</span></onclick ></li>
+    <aside className="sidebar">
+      <h2 className="brand">Expense Pro</h2>
+      <nav>
+        <NavLink to="/dashboard">
+          <Home size={18} /> Dashboard
+        </NavLink>
+        <NavLink to="/expenses">
+          <FileText size={18} /> Expenses
+        </NavLink>
+        <NavLink to="/add-expense" className="active">
+          <ClipboardList size={18} /> New Expense
+        </NavLink>
+        <NavLink to="/reports">
+          <FileText size={18} /> Reports
+        </NavLink>
+        <NavLink to="/analytics">
+          <BarChart size={18} /> Analytics
+        </NavLink>
       </nav>
-      
-      <div className="logoutbutton">
-        <a><onclick to="/logout" className="logout-btn"><FaSignOutAlt /> Logout</onclick></a>
-        </div>
-    </div>
+      <div className="sidebar-bottom">
+        <NavLink to="/logout" className="logout-btn">
+          <LogOut size={16} /> Log out
+        </NavLink>
+      </div>
+    </aside>
   );
 };
 
-export default Sidebar;
+export default Sidebar;
