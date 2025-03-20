@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
-
 body {
   margin: 0;
   font-family: "Merriweather", serif;
@@ -96,6 +95,27 @@ body {
   margin-bottom: 40px;
 }
 
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-btn {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #b71c1c;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -117,7 +137,7 @@ body {
   background-color: #e0f7fa; /* Light blue color from the screenshot */
 }
 
-.login-btn {
+.enter-btn {
   background-color: #d32f2f;
   color: white;
   border: none;
@@ -130,7 +150,7 @@ body {
   align-self: center; /* Center the button */
 }
 
-.login-btn:hover {
+.enter-btn:hover {
   background-color: #b71c1c;
 }
 
