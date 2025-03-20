@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Upload, LogOut, Home, FileText, BarChart, ClipboardList } from "lucide-react";
-
+import { Upload } from "lucide-react";
 import "./NewExpense.css";
 
 const NewExpense = () => {
@@ -25,31 +24,13 @@ const NewExpense = () => {
 
   return (
     <div className="container">
-      {/* Sidebar */}
-      <aside className="sidebar">
-        <h2 className="brand">Expense Pro</h2>
-        <nav>
-        <a href="/dashboard"><Home size={18} /> Dashboard</a>
-        <a href="/expenses"><FileText size={18} /> Expenses</a>
-        <a href="/add-expense" className="active"><ClipboardList size={18} /> Add Expense</a>
-        <a href="/reports"><FileText size={18} /> Reports</a>
-        <a href="/analytics"><BarChart size={18} /> Analytics</a>
-        </nav>
-        <div className="sidebar-bottom">
-          <a href="/logout" className="logout-btn">
-            <LogOut size={16} /> Log out
-          </a>
-        </div>
-      </aside>
+      {/* Title in a Separate Div */}
+      <div className="title-wrapper">
+        <h1 className="page-title">New Expense</h1>
+      </div>
 
-      {/* Main Content */}
       <div className="content-wrapper">
         <main className="main-content">
-          {/* Title Container (Left-Aligned) */}
-          <div className="title-container">
-            <h1 className="page-title">New Expense</h1>
-          </div>
-
           {/* Expense Form */}
           <div className="form-container">
             <form onSubmit={handleSubmit} className="expense-form">
