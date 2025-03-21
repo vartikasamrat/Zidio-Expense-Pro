@@ -1,4 +1,4 @@
-import "./Loginpage.css";
+import "./Initial.css";
 import cashbag from './assets/cashbag.png';
 import analytics from './assets/analytics.png';
 import target from './assets/target.png';
