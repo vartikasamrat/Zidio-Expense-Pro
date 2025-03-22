@@ -16,35 +16,6 @@ const DashboardPage = () => {
 
         <div className="container">
         <div><Sidebar></Sidebar></div>
-
-        {/* <aside className="sidebar">
-          <div className="brand">Expense Pro</div>
-    
-          <nav className="sidebar-nav">
-            <a href="/dashboard" className={currentPage === "dashboard" ? "active" : "dashboard"}>
-              <Home size={18} /> Dashboard
-            </a>
-            <a href="/expenses" className={currentPage === "expenses" ? "active" : ""}>
-              <FileText size={18} /> Expenses
-            </a>
-            <a href="/add-expense" className={currentPage === "add-expense" ? "active" : ""}>
-              <Clipboard size={18} /> Add Expense
-            </a>
-            <a href="/reports" className={currentPage === "reports" ? "active" : ""}>
-              <FileText size={18} /> Reports
-            </a>
-            <a href="/analytics" className={currentPage === "analytics" ? "active" : ""}>
-              <BarChart size={18} /> Analytics
-            </a>
-          </nav>
-          <div className="sidebar-bottom">
-            <a href="/logout" className="logout-btn">
-              <LogOut size={16} /> Log out
-            </a>
-          </div>
-        </aside> */}
-
-
         {/* Main Content Area */}
         <div className="dashboard-content">
           {currentPage === "dashboard" && (
