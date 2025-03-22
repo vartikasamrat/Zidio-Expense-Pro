@@ -1,6 +1,8 @@
+
 import { useState } from "react";
 import { Home, FileText, Clipboard, BarChart, LogOut } from "react-feather";
 import "./ExpensePro.css";
+import Sidebar from "./components/sidebar";
 
 const getStatusIcon = (status) => {
   switch (status) {
@@ -44,7 +46,9 @@ const DashboardManager = () => {
       <div className="dashboard-header"></div>
 
       <div className="container">
-        <aside className="sidebar">
+        <div> <Sidebar></Sidebar></div>
+        
+        {/* <aside className="sidebar">
           <div className="brand">Expense Pro</div>
 
           <nav className="sidebar-nav">
@@ -55,7 +59,7 @@ const DashboardManager = () => {
               <FileText size={18} /> Expenses
             </a>
             <a onClick={() => setActiveTab("add-expense")} className={activeTab === "add-expense" ? "active" : ""}>
-              <Clipboard size={18} /> Approval
+              <Clipboard size={18} /> Add Expense
             </a>
             <a onClick={() => setActiveTab("reports")} className={activeTab === "reports" ? "active" : ""}>
               <FileText size={18} /> Reports
@@ -69,7 +73,7 @@ const DashboardManager = () => {
               <LogOut size={16} /> Log out
             </a>
           </div>
-        </aside>
+        </aside> */}
 
         {/* Summary Cards */}
         
@@ -142,4 +146,3 @@ const DashboardManager = () => {
 };
 
 export default DashboardManager;
-
