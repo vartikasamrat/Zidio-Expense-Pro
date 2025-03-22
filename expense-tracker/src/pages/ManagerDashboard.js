@@ -48,33 +48,6 @@ const DashboardManager = () => {
       <div className="container">
         <div> <Sidebar></Sidebar></div>
         
-        {/* <aside className="sidebar">
-          <div className="brand">Expense Pro</div>
-
-          <nav className="sidebar-nav">
-            <a onClick={() => setActiveTab("dashboard")} className={activeTab === "dashboard" ? "active" : ""}>
-              <Home size={18} /> Dashboard
-            </a>
-            <a onClick={() => setActiveTab("expenses")} className={activeTab === "expenses" ? "active" : ""}>
-              <FileText size={18} /> Expenses
-            </a>
-            <a onClick={() => setActiveTab("add-expense")} className={activeTab === "add-expense" ? "active" : ""}>
-              <Clipboard size={18} /> Add Expense
-            </a>
-            <a onClick={() => setActiveTab("reports")} className={activeTab === "reports" ? "active" : ""}>
-              <FileText size={18} /> Reports
-            </a>
-            <a onClick={() => setActiveTab("analytics")} className={activeTab === "analytics" ? "active" : ""}>
-              <BarChart size={18} /> Analytics
-            </a>
-          </nav>
-          <div className="sidebar-bottom">
-            <a href="/logout" className="logout-btn">
-              <LogOut size={16} /> Log out
-            </a>
-          </div>
-        </aside> */}
-
         {/* Summary Cards */}
         
         <div className="summary-cards">
