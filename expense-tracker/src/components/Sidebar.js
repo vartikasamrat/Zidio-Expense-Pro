@@ -8,13 +8,13 @@ const Sidebar = () => {
     <aside className="sidebar">
       <h2 className="brand">Expense Pro</h2>
       <nav>
-        <NavLink to="/dashboard">
+        <NavLink to="/dashboard" className="active">
           <Home size={18} /> Dashboard
         </NavLink>
         <NavLink to="/expenses">
           <FileText size={18} /> Expenses
         </NavLink>
-        <NavLink to="/add-expense" className="active">
+        <NavLink to="/add-expense">
           <ClipboardList size={18} /> New Expense
         </NavLink>
         <NavLink to="/reports">
