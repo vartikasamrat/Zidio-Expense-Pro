@@ -1,6 +1,8 @@
+
 import { useState } from "react";
 import { Home, FileText, Clipboard, BarChart, LogOut } from "react-feather";
 import "./ExpensePro.css";
+import Sidebar from "./components/sidebar";
 
 const DashboardPage = () => {
   const [currentPage, setCurrentPage] = useState("dashboard");
@@ -13,8 +15,9 @@ const DashboardPage = () => {
 
 
         <div className="container">
-        
-        <aside className="sidebar">
+        <div><Sidebar></Sidebar></div>
+
+        {/* <aside className="sidebar">
           <div className="brand">Expense Pro</div>
     
           <nav className="sidebar-nav">
@@ -39,7 +42,8 @@ const DashboardPage = () => {
               <LogOut size={16} /> Log out
             </a>
           </div>
-        </aside>
+        </aside> */}
+
 
         {/* Main Content Area */}
         <div className="dashboard-content">
@@ -119,5 +123,3 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
-
-
