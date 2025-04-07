@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Upload } from "lucide-react";
-import "./NewExpense.css";
+import "../styles/NewExpense.css";
 
 const NewExpense = () => {
   const [description, setDescription] = useState("");
@@ -23,15 +23,13 @@ const NewExpense = () => {
   };
 
   return (
-    <div className="container">
-      {/* Title in a Separate Div */}
+    <div className="main-container">
       <div className="title-wrapper">
         <h1 className="page-title">New Expense</h1>
       </div>
 
       <div className="content-wrapper">
         <main className="main-content">
-          {/* Expense Form */}
           <div className="form-container">
             <form onSubmit={handleSubmit} className="expense-form">
               <h2 className="form-title">Expense Details</h2>
@@ -86,7 +84,6 @@ const NewExpense = () => {
                 </div>
               </div>
 
-              {/* File Upload */}
               <div className="form-group full-width">
                 <label>Attachments</label>
                 <div className="upload-box">
@@ -99,10 +96,15 @@ const NewExpense = () => {
                 </div>
               </div>
 
-              {/* Action Buttons */}
               <div className="form-actions">
-                <button type="submit" className="submit-btn">Submit</button>
-                <button type="button" className="clear-btn" onClick={handleClear}>
+                <button type="submit" className="submit-btn">
+                  Submit
+                </button>
+                <button
+                  type="button"
+                  className="clear-btn"
+                  onClick={handleClear}
+                >
                   Clear All
                 </button>
               </div>
