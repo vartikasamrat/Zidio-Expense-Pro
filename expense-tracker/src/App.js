@@ -1,29 +1,39 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";  // Import Sidebar
-import NewExpense from "./pages/NewExpense";
-/*import Dashboard from "./pages/Dashboard";
+import Landing from "./pages/Landing";
+import DashboardLayout from "./layouts/DashboardLayout";
+import EmployeeDashboard from "./pages/EmployeeDashboard";
+import ManagerDashboard from "./pages/ManagerDashboard";
 import Expenses from "./pages/Expenses";
+import NewExpense from "./pages/NewExpense";
 import Reports from "./pages/Reports";
 import Analytics from "./pages/Analytics";
-import Logout from "./pages/Logout";*/
-import "./App.css"; // Import global styles
+import "./App.css";
 
 const App = () => {
   return (
     <Router>
-      <div className="app-container">
-        <Sidebar /> {/* Sidebar remains visible on all pages */}
-        <div className="content"> {/* This will hold the page content */}
-          <Routes>
-            <Route path="/add-expense" element={<NewExpense />} />
-            {/*<Route path="/" element={<Dashboard />} />
-            <Route path="/expenses" element={<Expenses />} />  
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/analytics" element={<Analytics />} />*/}
-          </Routes>
-        </div>
-      </div>
+      <Routes>
+        {/* Landing/Login Page */}
+        <Route path="/" element={<Landing />} />
+
+        {/* Dashboard Layout shared for both roles */}
+        <Route path="/employee-dashboard" element={<DashboardLayout />}>
+          <Route index element={<EmployeeDashboard />} />
+          <Route path="expenses" element={<Expenses />} />
+          <Route path="new-expense" element={<NewExpense />} />
+          <Route path="reports" element={<Reports />} />
+          <Route path="analytics" element={<Analytics />} />
+        </Route>
+
+        <Route path="/manager-dashboard" element={<DashboardLayout />}>
+          <Route index element={<ManagerDashboard />} />
+          <Route path="expenses" element={<Expenses />} />
+          <Route path="new-expense" element={<NewExpense />} />
+          <Route path="reports" element={<Reports />} />
+          <Route path="analytics" element={<Analytics />} />
+        </Route>
+      </Routes>
     </Router>
   );
 };
