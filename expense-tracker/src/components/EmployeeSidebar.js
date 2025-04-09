@@ -15,19 +15,19 @@ const EmployeeSidebar = () => {
     <aside className="sidebar">
       <h2 className="brand">Expense Pro</h2>
       <nav>
-        <NavLink to="/employee-dashboard">
+        <NavLink to="/employee/dashboard">
           <Home size={18} /> Dashboard
         </NavLink>
-        <NavLink to="expenses">
-          <FileText size={18} /> Expenses
+        <NavLink to="/employee/my-expenses">
+          <FileText size={18} /> My Expenses
         </NavLink>
-        <NavLink to="new-expense">
+        <NavLink to="/employee/new-expense">
           <ClipboardList size={18} /> New Expense
         </NavLink>
-        <NavLink to="reports">
+        <NavLink to="/employee/reports">
           <FileText size={18} /> Reports
         </NavLink>
-        <NavLink to="analytics">
+        <NavLink to="/employee/analytics">
           <BarChart size={18} /> Analytics
         </NavLink>
       </nav>
