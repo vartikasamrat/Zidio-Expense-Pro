@@ -131,11 +131,16 @@ textarea {
 }
 
 textarea:focus,
+textarea:hover,
 input:focus,
+input:hover,
+select:hover,
 select:focus {
-  border-color: #c98c46;
-  box-shadow: 0px 0px 5px rgba(201, 140, 70, 0.5);
+  border-color: #a3672c; /* darker version of your main color */
+  box-shadow: none; /* removes yellow glow */
+  
 }
+
 
 /* Upload Area */
 .upload-box {
