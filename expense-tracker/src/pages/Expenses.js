@@ -1,86 +1,106 @@
-import React from "react";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import React, { useState } from "react";
 import "../styles/Expenses.css";
 
 const Expenses = () => {
+  const [filter, setFilter] = useState("All");
+  const [expandedId, setExpandedId] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const toggleExpand = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  const expenses = [
+    {
+      id: 1,
+      description: "Team lunch",
+      amount: "₹1200",
+      category: "Food",
+      date: "2025-04-06",
+      status: "Approved",
+      notes: "Lunch at The Leela with the marketing team",
+    },
+    {
+      id: 2,
+      description: "Airport cab",
+      amount: "₹850",
+      category: "Travel",
+      date: "2025-04-08",
+      status: "Pending",
+      notes: "Ola ride from airport to office",
+    },
+    {
+      id: 3,
+      description: "Printer ink",
+      amount: "₹500",
+      category: "Office Supplies",
+      date: "2025-04-09",
+      status: "Rejected",
+      notes: "Bought ink for HP printer",
+    },
+  ];
+
+  // Filter and search (case-insensitive)
+  const filteredExpenses = expenses.filter((exp) => {
+    const matchesFilter = filter === "All" || exp.status === filter;
+    const search = searchQuery.toLowerCase();
+    const matchesSearch =
+      exp.description.toLowerCase().includes(search) ||
+      exp.category.toLowerCase().includes(search) ||
+      exp.date.includes(search);
+    return matchesFilter && matchesSearch;
+  });
+
   return (
-    <div className="container">
-      <Sidebar />
-      <div className="main-container">
-        <Header />
-        <div>
-          <h2 className="expenses-heading">Expenses</h2>
-          <p className="expenses-para">Track and manage your expenses</p>
+    <div className="expenses-container">
+      <h2 className="expenses-heading">Expenses</h2>
+      <p className="expenses-para">Track and manage your expenses</p>
 
-          {/* ✅ Expense Table Section */}
-          <div className="expense-container">
-            {/* Search Input */}
-            <div className="search-wrapper">
-              <svg
-                className="search-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="gray"
-                viewBox="0 0 16 16"
-              >
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85ZM12.5 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" />
-              </svg>
-              <input type="text" placeholder="Search" className="search-bar" />
-            </div>
-
-            {/* Filter Buttons */}
-            <div className="filters">
-              <button className="all-btn">All</button>
-              <button className="approved-btn">Approved</button>
-              <button className="pending-btn">Pending</button>
-              <button className="rejected-btn">Rejected</button>
-            </div>
-
-            {/* Table */}
-            <div className="expense-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Description</th>
-                    <th>Amount</th>
-                    <th>Category</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Team lunch</td>
-                    <td>₹1200</td>
-                    <td>Food</td>
-                    <td>04-06-2003</td>
-                    <td>✅</td>
-                  </tr>
-                  <tr>
-              <td><br></br></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><br></br><br></br></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <p>
-              <br></br>
-            </p>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          {/* ✅ End of Expense Table */}
+      <div className="expenses-controls">
+        <input
+          type="text"
+          placeholder="Search"
+          className="search-bar"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <div className="filters">
+          <button className="all-btn" onClick={() => setFilter("All")}>All</button>
+          <button className="approved-btn" onClick={() => setFilter("Approved")}>Approved</button>
+          <button className="pending-btn" onClick={() => setFilter("Pending")}>Pending</button>
+          <button className="rejected-btn" onClick={() => setFilter("Rejected")}>Rejected</button>
         </div>
+      </div>
+
+      <div className="expense-list">
+        {filteredExpenses.length > 0 ? (
+          filteredExpenses.map((expense) => (
+            <div
+              key={expense.id}
+              className={`expense-item ${expandedId === expense.id ? "expanded" : ""}`}
+              onClick={() => toggleExpand(expense.id)}
+            >
+              <div className="expense-top">
+                <div className="expense-info">
+                  <h4>{expense.description}</h4>
+                  <p>{expense.category}</p>
+                  <p>{expense.date}</p>
+                  <span className="amount">{expense.amount}</span>
+                </div>
+                <div className="expense-meta">
+                  <p className={`status-${expense.status.toLowerCase()}`}>{expense.status}</p>
+                </div>
+              </div>
+              <div className="expense-details">
+                <p><strong>Notes:</strong> {expense.notes}</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p style={{ color: "#999", fontStyle: "italic", marginTop: "20px" }}>
+            No such expense found.
+          </p>
+        )}
       </div>
     </div>
   );
