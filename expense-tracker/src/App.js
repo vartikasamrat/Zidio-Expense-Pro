@@ -7,7 +7,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import ManagerDashboard from "./pages/ManagerDashboard";
 import Reports from "./pages/Reports";
 import Analytics from "./pages/Analytics";
-import EmployeeNewExpense from "./pages/ManagerNewExpense";
+import ManagerNewExpense from "./pages/ManagerNewExpense";
 
 // Employee pages
 import EmployeeDashboard from "./pages/EmployeeDashboard";
