@@ -19,12 +19,15 @@ const ManagerSidebar = () => {
           <Home size={18} /> Dashboard
         </NavLink>
         <NavLink to="/manager/team-expenses">
-          <FileText size={18} /> Expenses
+          <FileText size={18} /> Team Expenses
+        </NavLink>
+        <NavLink to="/manager/my-expenses">
+          <FileText size={18} /> My Expenses
         </NavLink>
         <NavLink to="/manager/new-expense">
           <ClipboardList size={18} /> New Expense
         </NavLink>
-        <NavLink to="/manager/approve-expenses">
+        <NavLink to="/manager/approvals">
           <ClipboardList size={18} /> Approvals
         </NavLink>
         <NavLink to="/manager/reports">
