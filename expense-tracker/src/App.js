@@ -5,13 +5,16 @@ import DashboardLayout from "./layouts/DashboardLayout";
 
 // Manager pages
 import ManagerDashboard from "./pages/ManagerDashboard";
+import TeamExpenses from "./pages/TeamExpenses";  // New page for team expenses
 import Reports from "./pages/Reports";
 import Analytics from "./pages/Analytics";
+import ManagerExpenses from "./pages/ManagerExpenses";
+import Approvals from "./pages/Approvals";
 import ManagerNewExpense from "./pages/ManagerNewExpense";
 
 // Employee pages
 import EmployeeDashboard from "./pages/EmployeeDashboard";
-import MyExpenses from "./pages/Expenses";
+import EmployeeExpenses from "./pages/Expenses";
 import EmployeeNewExpense from "./pages/NewExpense";
 
 import "./App.css";
@@ -26,14 +29,18 @@ const App = () => {
         {/* Manager Routes */}
         <Route path="/manager" element={<DashboardLayout />}>
           <Route path="dashboard" element={<ManagerDashboard />} />
+          <Route path="team-expenses" element={<TeamExpenses />} />  {/* Added Team Expenses Route */}
+          <Route path="approvals" element={<Approvals />} />
           <Route path="reports" element={<Reports />} />
           <Route path="analytics" element={<Analytics />} />
+          <Route path="my-expenses" element={<ManagerExpenses />} />
+          <Route path="new-expense" element={<ManagerNewExpense />} />
         </Route>
 
         {/* Employee Routes */}
         <Route path="/employee" element={<DashboardLayout />}>
           <Route path="dashboard" element={<EmployeeDashboard />} />
-          <Route path="my-expenses" element={<MyExpenses />} />
+          <Route path="my-expenses" element={<EmployeeExpenses />} />
           <Route path="new-expense" element={<EmployeeNewExpense />} />
         </Route>
       </Routes>
