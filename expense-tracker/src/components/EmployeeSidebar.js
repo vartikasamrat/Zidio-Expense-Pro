@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Home, FileText, ClipboardList, BarChart, LogOut } from "lucide-react";
+import { Home, FileText, ClipboardList, LogOut } from "lucide-react";
 import "./Sidebar.css";
 
 const EmployeeSidebar = () => {
@@ -23,12 +23,6 @@ const EmployeeSidebar = () => {
         </NavLink>
         <NavLink to="/employee/new-expense">
           <ClipboardList size={18} /> New Expense
-        </NavLink>
-        <NavLink to="/employee/reports">
-          <FileText size={18} /> Reports
-        </NavLink>
-        <NavLink to="/employee/analytics">
-          <BarChart size={18} /> Analytics
         </NavLink>
       </nav>
       <div className="sidebar-bottom">
